@@ -53,9 +53,11 @@ cacheSolve <- function(x, ...) {
         return(inverse)
     }
     
-    ## Otherwise inverse data, cache it, and return it
+    ## Otherwise inverse data, cache it
     data <- x$get()
     inverse <- solve(data, ...)
     x$setinverse(inverse)
-    return(inverse)
+    
+    ## return inverse
+    inverse
 }
